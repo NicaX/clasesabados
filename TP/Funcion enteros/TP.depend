@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1535640097 source:c:\users\alumno\desktop\tp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1535724559 source:d:\galarza\programacion-laboratorio\tp\funcion enteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"UTN_INPUT.h"
+
+1535725143 d:\galarza\programacion-laboratorio\tp\funcion enteros\utn_input.h
+
+1535725361 source:d:\galarza\programacion-laboratorio\tp\funcion enteros\utn_input.c
+	<stdio.h>
+	"UTN_INPUT.h"
+

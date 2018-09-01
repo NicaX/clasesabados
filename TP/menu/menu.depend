@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1535812351 source:/home/alumno/clase4Sabados/Programacion-Laboratorio/TP/menu/main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1535816225 source:/home/alumno/clase4Sabados/clasesabados/clase 1/tp_prueba/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	"math.h"
+
+1535815803 /home/alumno/clase4Sabados/clasesabados/clase 1/tp_prueba/math.h
+
+1535814997 source:/home/alumno/clase4Sabados/clasesabados/clase 1/tp_prueba/math.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+

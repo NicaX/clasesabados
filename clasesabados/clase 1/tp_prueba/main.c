@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio_ext.h>//no funciona en windows
 #include <string.h>
 #include "math.h"
+
 
 int main()
 {
@@ -11,32 +11,35 @@ int main()
     int flagB=0;
     float numeroUno;
     float numeroDos;
-    float resultadoResta;
-    float resultadoSuma;
+    int resultadoResta;
+    int resultadoSuma;
+    int resultadoMultiplicacion;
+    float resultadoDivision;
 
     do
     {
         if(flagA==1 )
         {
-        printf("(1)Ingresar 1er operando (A)=%2.f\n",numeroUno);
+            printf("(1) Ingresar 1er operando (A)=%2.f\n",numeroUno);
         }
         else
         {
-         printf("(1)Ingresar 1er operando (A)\n");
+            printf("(1) Ingresar 1er operando (A)\n");
         }
         if(flagB==1 )
         {
-        printf("(2)Ingresar 2do operando (B)=%2.f\n ",numeroDos);
+            printf("(2) Ingresar 2do operando (B)=%2.f\n",numeroDos);
         }
         else
         {
-         printf("(2)Ingresar 2do operando (B)\n");
+            printf("(2) Ingresar 2do operando (B)\n");
         }
+
         printf("(3) calcular las operaciones \n");
         printf("(4) resultados \n");
         printf("(5) salir\n");
-        __fpurge(stdin);
-        printf("elija una opcion:" );
+        fflush(stdin);
+        printf("\nelija una opcion:" );
         scanf("%d", &opcion);
 
         switch(opcion)
@@ -53,33 +56,68 @@ int main()
         case 3:
             if(flagA==1 && flagB==1)
             {
-            printf("multiplica 2 numeros \n");            }
+                printf("calculando la suma: %2.f -%2.f \n",numeroUno,numeroDos);
+                printf("calculando la resta: %2.f +%2.f \n",numeroUno,numeroDos);
+                printf("calculando la division: %2.f /%2.f \n",numeroUno,numeroDos);
+                printf("calculando la multiplicacion: %2.f *%2.f \n",numeroUno,numeroDos);
+            }
             else
             {
-            printf("error ingrese los numeros");            }
+                printf("\npor favor ingrese dos numeros!!!!!!!\n");
+            }
             break;
         case 4:
-            printf("divide 2 numeros\n");
+
+            if(flagA==1 && flagB==1)
+            {
+                if (!division(numeroUno, numeroDos, &resultadoDivision))
+                {
+                    printf("el resultado de %2.f / %2.f es: %.2f\n",numeroUno,numeroDos, resultadoDivision);
+                }
+                else
+                {
+                    printf("no se puede dividir por 0\n");
+                }
+
+
+                resultadoSuma=suma(numeroUno,numeroDos,resultadoSuma);
+
+                printf("el resultado de %2.f +%2.f es: %d \n ",numeroUno,numeroDos,resultadoSuma);
+
+
+                resultadoResta=resta(numeroUno,numeroDos,resultadoResta);
+
+                printf("el resultado de %2.f -%2.f es: %d \n ",numeroUno,numeroDos,resultadoResta);
+
+
+                resultadoMultiplicacion=multiplicacion(numeroUno,numeroDos,resultadoMultiplicacion);
+
+                printf("el resultado de %2.f *%2.f es: %d \n ",numeroUno,numeroDos,resultadoMultiplicacion);
+
+
+            }
+            else
+            {
+                printf("ingresa dos numeros gil\n");
+            }
             break;
         case 5:
             printf("factorial de dos numeros \n");
             break;
         case 6:
-        break;
+            break;
         default:
             printf("ingrese una opcion valida \n");
 
         }
 
-        __fpurge(stdin);
-        printf("\nIngrese ENTER para continuar...");
-        getchar();
-      //system("pause");
-       system("clear");
+        fflush(stdin);
+        system("pause");
+        system("cls");
 
 
 
-    } while(opcion!=5);
+    }while(opcion!=5);
 
     return 0;
 }

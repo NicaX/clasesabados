@@ -15,7 +15,7 @@ int main()
     int resultadoSuma;
     int resultadoMultiplicacion;
     float resultadoDivision;
-    int resultadoFactorial;
+    long  long int resultadoFactorial;
 
     do
     {
@@ -91,9 +91,9 @@ int main()
                     resultadoMultiplicacion=multiplicacion(numeroUno,numeroDos,resultadoMultiplicacion);
                     printf("el resultado de %2.f *%2.f es: %d \n ",numeroUno,numeroDos,resultadoMultiplicacion);
                     resultadoFactorial=factorial(numeroUno);
-                    printf("el factorial de %2.f es: %d \n ",numeroUno,resultadoFactorial);
+                    printf("el factorial de %2.f es: %I64d  \n ",numeroUno,resultadoFactorial);
                     resultadoFactorial=factorial(numeroDos);
-                    printf("el factorial de %2.f es: %d \n ",numeroDos,resultadoFactorial);
+                    printf("el factorial de %2.f es: %I64d \n ",numeroDos,resultadoFactorial);
 
                 }
                 else

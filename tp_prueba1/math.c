@@ -43,9 +43,9 @@ int multiplicacion(float numero1, float numero2, float resultadoMultiplicacion)
     return (int)resultadoMultiplicacion;
 }
 
-int factorial(float num)
+long long int factorial(float num)
 {
-    int resultadoFactorial=1;
+    long long int resultadoFactorial=1;
     int i;
 
     if(num>=0)

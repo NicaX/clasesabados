@@ -44,21 +44,20 @@ int multiplicacion(float numero1, float numero2, float resultadoMultiplicacion)
 
     return (int)resultadoMultiplicacion;
 }
-/*int factorial(float numero1, float numero2,float factorialUno,float factorialDos,)
+
+int factorial(float num)
 {
- float factorialUno=1,
- float factorialDos=1;
- int i;
+    int resultadoFactorial=1;
+    int i;
 
- for(i=numero1;i>=1;i--)
- {
-     factorialUno=factorial*i;
+    if(num>=0)
 
- }
- for(i=numero2;i>=1;i--)
- {
-     factorialUno=factorial*i;
+        for(i=(int)num; i>=1; i--)
+    {
+        resultadoFactorial= resultadoFactorial*i;
+    }
+    return resultadoFactorial;
 
- }
 
-}*/
+
+}

@@ -7,7 +7,7 @@ int division(float numero1, float numero2, float* resultadoDivision);
 int suma(float numero1, float numero2, float resultadoSuma);
 int resta(float numero1, float numero2, float resultadoResta);
 int multiplicacion(float numero1, float numero2, float resultadoMultiplicacion);
-//int factorial(float numero1, float numero2,float factorialUno,float factorialDos,);
+int factorial (float );
 
 
 #endif // MATH_H_INCLUDED

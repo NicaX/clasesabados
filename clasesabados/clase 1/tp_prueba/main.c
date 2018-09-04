@@ -3,21 +3,24 @@
 #include <string.h>
 #include "math.h"
 
-
 int main()
 {
     int opcion;
     int flagA=0;
     int flagB=0;
+    int flagCalculos=0;
     float numeroUno;
     float numeroDos;
     int resultadoResta;
     int resultadoSuma;
     int resultadoMultiplicacion;
     float resultadoDivision;
+    int resultadoFactorial;
+
 
     do
     {
+
         if(flagA==1 )
         {
             printf("(1) Ingresar 1er operando (A)=%2.f\n",numeroUno);
@@ -60,46 +63,60 @@ int main()
                 printf("calculando la resta: %2.f +%2.f \n",numeroUno,numeroDos);
                 printf("calculando la division: %2.f /%2.f \n",numeroUno,numeroDos);
                 printf("calculando la multiplicacion: %2.f *%2.f \n",numeroUno,numeroDos);
+                 flagCalculos=1;
             }
             else
             {
-                printf("\npor favor ingrese dos numeros!!!!!!!\n");
+                printf("\nERROR!!!! Por favor ingrese dos numeros!\n");
             }
+
             break;
         case 4:
-
-            if(flagA==1 && flagB==1)
+            if(flagCalculos==1)
             {
-                if (!division(numeroUno, numeroDos, &resultadoDivision))
+                if(flagA==1 && flagB==1)
                 {
-                    printf("el resultado de %2.f / %2.f es: %.2f\n",numeroUno,numeroDos, resultadoDivision);
+                    if (!division(numeroUno, numeroDos, &resultadoDivision))
+                    {
+                        printf("el resultado de %2.f / %2.f es: %.2f\n",numeroUno,numeroDos, resultadoDivision);
+                    }
+                    else
+                    {
+                        printf("ERRROR!! no se puede dividir por 0!\n");
+                    }
+
+
+                    resultadoSuma=suma(numeroUno,numeroDos,resultadoSuma);
+                    printf("el resultado de %2.f +%2.f es: %d \n ",numeroUno,numeroDos,resultadoSuma);
+
+
+                    resultadoResta=resta(numeroUno,numeroDos,resultadoResta);
+                    printf("el resultado de %2.f -%2.f es: %d \n ",numeroUno,numeroDos,resultadoResta);
+
+
+                    resultadoMultiplicacion=multiplicacion(numeroUno,numeroDos,resultadoMultiplicacion);
+                    printf("el resultado de %2.f *%2.f es: %d \n ",numeroUno,numeroDos,resultadoMultiplicacion);
+
+
+                    resultadoFactorial=factorial(numeroUno);
+                    printf("el factorial de %2.f es: %d \n ",numeroUno,resultadoFactorial);
+
+                    resultadoFactorial=factorial(numeroDos);
+                    printf("el factorial de %2.f es: %d \n ",numeroDos,resultadoFactorial);
+
+
                 }
                 else
                 {
-                    printf("no se puede dividir por 0\n");
+                    printf("ERROR!!! Ingrese dos numeros por favor!\n");
                 }
-
-
-                resultadoSuma=suma(numeroUno,numeroDos,resultadoSuma);
-
-                printf("el resultado de %2.f +%2.f es: %d \n ",numeroUno,numeroDos,resultadoSuma);
-
-
-                resultadoResta=resta(numeroUno,numeroDos,resultadoResta);
-
-                printf("el resultado de %2.f -%2.f es: %d \n ",numeroUno,numeroDos,resultadoResta);
-
-
-                resultadoMultiplicacion=multiplicacion(numeroUno,numeroDos,resultadoMultiplicacion);
-
-                printf("el resultado de %2.f *%2.f es: %d \n ",numeroUno,numeroDos,resultadoMultiplicacion);
-
 
             }
             else
             {
-                printf("ingresa dos numeros gil\n");
+                printf("ERROR\n");
             }
+
             break;
         case 5:
             printf("factorial de dos numeros \n");
@@ -117,7 +134,8 @@ int main()
 
 
 
-    }while(opcion!=5);
+    }
+    while(opcion!=5);
 
     return 0;
 }
